@@ -20,7 +20,7 @@ The way I restricted the nucleotide values causes some conversion back to rune f
 
 The buffer size and rollover could be optimized, but I opted to leave them as is for now.
 
-Stream could be in interface to make it easier to call the process function
+Stream could be a interface to make it easier to call the process function
 
 I make the processor stateful rather a func as I felt the border array was sufficient setup to
 warrant it. That being said, I could still add a helper func, but am not sure what the signature should be.
