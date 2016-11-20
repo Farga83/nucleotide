@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// nucleotide is a synonyn for dealing the requested interface
+// nucleotide is a synonyn for supporting the requested interface
 type nucleotide rune
 
 const (
@@ -19,7 +19,7 @@ const (
 	T nucleotide = 'T'
 )
 
-// New creates a new nucleotide of one of the defined values or an error otherwise
+// New creates a new nucleotide with one of the defined values or an error otherwise
 func New(char rune) (nucleotide, error) {
 	switch char {
 	case 'A':

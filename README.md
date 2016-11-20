@@ -23,4 +23,7 @@ The buffer size and rollover could be optimized, but I opted to leave them as is
 Stream could be in interface to make it easier to call the process function
 
 I make the processor stateful rather a func as I felt the border array was sufficient setup to
-warrant it.
+warrant it. That being said, I could still add a helper func, but am not sure what the signature should be.
+Perhaps it would be something like the following
+
+``` func processStream(streamer func(stream *s) nucleotide, T []nucleotide, x, y int)) ```

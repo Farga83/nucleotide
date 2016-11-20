@@ -32,7 +32,6 @@ func (p processor) ProcessStream(stream *s, x, y int) {
 	bufferPosition, shiftDistance := 0, 0
 	buffer := makeBuffer(x, y, len(p.pattern))
 	size, stopCondition := loadBuffer(buffer, 0, stream)
-	//fmt.Printf("%c, size: %d", buffer, size)
 	for bufferPosition < size {
 		// Figure out how much of the prefix we are currently matching
 		for shiftDistance >= 0 && buffer[bufferPosition] != p.pattern[shiftDistance] {
