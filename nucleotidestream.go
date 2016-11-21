@@ -43,15 +43,8 @@ func (p processor) ProcessStream(stream *s, x, y int) {
 		// is at the edge of a buffer and we need to pull the trailing
 		// characters
 		if bufferPosition == size && !stopCondition {
-			offset := x
-			if shiftDistance == len(p.pattern) {
-				// We are at the edge of the buffer so include the pattern in what
-				// we copy over
-				offset += len(p.pattern)
-			} else {
-				// rollover any nucleotides that are part of an existing match search
-				offset += shiftDistance
-			}
+			// rollover any nucleotides that are part of an existing match search
+			offset := x + shiftDistance
 			bufferPosition = offset
 			size, stopCondition = loadBuffer(buffer, offset, stream)
 		}
