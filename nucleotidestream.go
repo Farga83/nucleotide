@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-// StreamProcessor defines interface for processing a stream
+// StreamProcessor defines the interface for processing a stream
 type StreamProcessor interface {
 	ProcessStream(stream *s, x, y int)
 }
 
-// struct to implement the StreamProcessor interface
+// processor struct to implement the StreamProcessor interface
 type processor struct {
 	pattern []nucleotide
 	borders []int
