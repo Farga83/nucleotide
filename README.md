@@ -11,6 +11,9 @@ The solution leverages a stream function that matches the signature
 The core logic is based on the Knuth-Morris-Pratt algorithm. To handle context printing 
 a buffer was implemented to process the stream in chunks.
 
+Some validation was skipped based on "Be aware" section of the problem as I took those as guarantees, 
+but I would add checks for each if this was to see production (e.g. if T was empty).
+
 A benchmark test was included that has 1638400 nucleotides defined in largesequence.txt.
 To execute the benchmark run `go test --run=Benchmark* -bench=.`
 
