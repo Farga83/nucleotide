@@ -66,17 +66,15 @@ func (p processor) ProcessStream(stream *s, x, y int) {
 func printPatternAndContext(buffer []nucleotide, pattern []nucleotide, endingIndex, x, y, size int) {
 	startingPrefix := 0
 	endingPosition := size
-	var prefix []nucleotide
-	var suffix []nucleotide
 	position := endingIndex - len(pattern) - x
 	if position > 0 {
 		startingPrefix = position
 	}
-	prefix = buffer[startingPrefix : endingIndex-len(pattern)]
+	prefix := buffer[startingPrefix : endingIndex-len(pattern)]
 	if endingIndex+y < endingPosition {
 		endingPosition = endingIndex + y
 	}
-	suffix = buffer[endingIndex:endingPosition]
+	suffix := buffer[endingIndex:endingPosition]
 	totalOut := make([]rune, (len(prefix) + len(pattern) + len(suffix)))
 	marker := 0
 	for _, val := range prefix {
