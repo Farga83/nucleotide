@@ -52,7 +52,7 @@ func (p processor) ProcessStream(stream *s, x, y int) {
 			printPatternAndContext(buffer, p.pattern, bufferPosition, x, y, size)
 			shiftDistance = p.borders[shiftDistance]
 			bufferPosition = bufferPosition - len(p.pattern) + 1
-			// if j is greater than zero we are in the process of a a match
+			// if shiftDistance is greater than zero we are in the process of a a match
 			// and should skip more known nucleotides
 			if shiftDistance > 0 {
 				bufferPosition += shiftDistance
