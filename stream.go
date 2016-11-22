@@ -24,17 +24,17 @@ type s struct {
 */
 func next(stream *s) nucleotide {
 	char, _, err := stream.stream.ReadRune()
-	// Handle cases where the input could be a file. Since this is a stream
-	// of data, we enforce that a newline is the end of the stream.
-	if char == newLine {
-		return ε
-	}
 	if err != nil {
 		if err == io.EOF {
 			return ε
 		}
 		// If another error occurred it is unrecoverable
 		panic("Unexpected error occurred")
+	}
+	// Handle cases where the input could be a file. Since this is a stream
+	// of data, we enforce that a newline is the end of the stream.
+	if char == newLine {
+		return ε
 	}
 	nucl, err := New(char)
 	if err != nil {
