@@ -42,7 +42,7 @@ func (p processor) ProcessStream(stream *s, x, y int) {
 		// Perform the roll over prior to condition check in case the match
 		// is at the edge of a buffer and we need to pull the trailing
 		// characters
-		if bufferPosition+y > size && !stopCondition {
+		if bufferPosition+y >= size && !stopCondition {
 			// rollover any nucleotides that are part of an existing match search
 			offset := x + shiftDistance
 			postMatchCharsToPreserve := size - bufferPosition
